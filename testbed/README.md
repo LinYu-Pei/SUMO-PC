@@ -27,8 +27,8 @@ Paho-mqtt 2.1.0
 
 7. 編譯testbed目錄底下的兩個MQTT Brokers，以下是這兩個broker分別使用的port:
 ```
-mosquitto-2.0.15_virtual: 1884
-mosquitto-2.0.15_physical: 1883
+mosquitto-2.0.15_virtual: 7884
+mosquitto-2.0.15_physical: 7883
 ```
 
 # Testbed 檔案目錄

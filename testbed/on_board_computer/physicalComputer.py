@@ -30,7 +30,7 @@ def on_message(client, userdata, msg):
         else:
             vehicle = Vehicle(veh_id)
             vehicleDict[veh_id] = vehicle
-            vehicle.connect(physical_mqtt_server='127.0.0.1', physical_mqtt_port=1883,virtual_mqtt_server='127.0.0.1', virtual_mqtt_port=1884)    
+            vehicle.connect(physical_mqtt_server='127.0.0.1', physical_mqtt_port=7883,virtual_mqtt_server='127.0.0.1', virtual_mqtt_port=7884)    
         
         vehicle.geofenceInfo = geofenceInfo        
         vehicle.publishGeoFence()        
@@ -50,6 +50,6 @@ if __name__ == '__main__':
     mqttc.on_connect = on_connect
     mqttc.on_message = on_message
 
-    mqttc.connect("127.0.0.1", 1884, 3600)
+    mqttc.connect("127.0.0.1", 7884, 3600)
 
     mqttc.loop_forever()

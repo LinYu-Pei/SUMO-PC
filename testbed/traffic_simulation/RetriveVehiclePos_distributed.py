@@ -41,7 +41,7 @@ if __name__ == '__main__':
     Vehicle_dispatcher.physicalComputers = computers
     computer_count = len(computers)
     pc_list = list(Vehicle_dispatcher.physicalComputers.keys())
-    Vehicle_dispatcher.connect('localhost', 1884)
+    Vehicle_dispatcher.connect('localhost', 7884)
 
     sumoBinary = "/home/tim/sumo/bin/sumo-gui"
     sumocfg = "/home/tim/traffic_simulation/osm.sumocfg"
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     i = 0
     while traci.simulation.getMinExpectedNumber() > 0:        
 
-        garbage_collector(physical_mqtt_server='127.0.0.1', physical_mqtt_port=1883, virtual_mqtt_server='127.0.0.1', virtual_mqtt_port=1884, traci_simulation=traci.simulation, vehicleDict=vehicleDict)        
+        garbage_collector(physical_mqtt_server='127.0.0.1', physical_mqtt_port=7883, virtual_mqtt_server='127.0.0.1', virtual_mqtt_port=7884, traci_simulation=traci.simulation, vehicleDict=vehicleDict)        
 
         for veh_id in traci.vehicle.getIDList():
             if veh_id in vehicleDict:
@@ -144,7 +144,7 @@ if __name__ == '__main__':
         traci.simulationStep()
 
 
-    garbage_collector(physical_mqtt_server='127.0.0.1', physical_mqtt_port=1883, virtual_mqtt_server='127.0.0.1', virtual_mqtt_port=1884, traci_simulation=traci.simulation, vehicleDict=vehicleDict)
+    garbage_collector(physical_mqtt_server='127.0.0.1', physical_mqtt_port=7883, virtual_mqtt_server='127.0.0.1', virtual_mqtt_port=7884, traci_simulation=traci.simulation, vehicleDict=vehicleDict)
 
     print("Simulation Done!")
 

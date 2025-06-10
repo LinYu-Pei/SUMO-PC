@@ -63,6 +63,6 @@ mqttc = mqtt.Client(client_id= client_id, callback_api_version=mqtt.CallbackAPIV
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 
-mqttc.connect("localhost", 1883, 60)
+mqttc.connect("localhost", 7883, 60)
 
 mqttc.loop_forever()
